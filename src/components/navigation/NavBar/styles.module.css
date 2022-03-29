@@ -1,0 +1,34 @@
+@import "../../../theme/colors.css";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--dark);
+  padding: 5px;
+  padding-left: 200px;
+  padding-right: 200px;
+  background-color: var(--bluesy);
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+}
+
+.logo {
+  color: var(--dark);
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+}

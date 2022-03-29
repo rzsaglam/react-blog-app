@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.close {
+  position: fixed;
+  top: 1%;
+  right: 5%;
+  color: gray;
+  font-size: x-large;
+}
+.title {
+  position: relative;
+  left: 50%;
+  transform: translate(-25%, -50%);
+}

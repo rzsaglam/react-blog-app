@@ -1,0 +1,11 @@
+@import "../../../theme/colors.css";
+
+.container {
+  background-color: var(--dark);
+  text-align: center;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--light);
+  font-size: 13px;
+}
