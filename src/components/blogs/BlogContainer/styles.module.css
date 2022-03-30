@@ -1,0 +1,24 @@
+@import "../../../theme/colors.css";
+
+.container {
+  border-bottom: 0.2px solid var(--dark);
+  margin: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 50px;
+  justify-content: space-evenly;
+}
+.author {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  font-style: italic;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.post {
+  font-size: 15px;
+}
