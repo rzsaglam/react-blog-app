@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { Formik } from "formik";
+import * as Yup from "yup";
 import Input from "../../common/Input";
 import Button from "../../common/Button";
 import styles from "./styles.module.css";
@@ -17,6 +18,16 @@ const modalStyle = {
   },
 };
 
+const AuthSchema = Yup.object().shape({
+  username: Yup.string()
+    .min(5, "username must be at least five character")
+    .max(20, "username must be shorter then twenty character")
+    .required("username is required"),
+  password: Yup.string()
+    .min(5, "password must be at least five character")
+    .required("password is required"),
+});
+
 function AuthModal({ isOpen, closeModal, title, handleFormSubmit }) {
   return (
     <Modal style={modalStyle} isOpen={isOpen}>
@@ -27,9 +38,10 @@ function AuthModal({ isOpen, closeModal, title, handleFormSubmit }) {
 
       <Formik
         initialValues={{ username: "", password: "" }}
+        validationSchema={AuthSchema}
         onSubmit={(values) => handleFormSubmit(values)}
       >
-        {({ values, handleChange, handleBlur, handleSubmit }) => (
+        {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
           <form>
             <Input
               type="text"
@@ -38,6 +50,7 @@ function AuthModal({ isOpen, closeModal, title, handleFormSubmit }) {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={"Username"}
+              error={errors.username}
             />
             <Input
               type="password"
@@ -46,8 +59,11 @@ function AuthModal({ isOpen, closeModal, title, handleFormSubmit }) {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={"Password"}
+              error={errors.password}
             />
-            <Button onClick={() => handleSubmit()}>Submit</Button>
+            <Button style={styles.button} onClick={() => handleSubmit()}>
+              Submit
+            </Button>
           </form>
         )}
       </Formik>

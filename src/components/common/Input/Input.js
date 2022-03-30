@@ -8,9 +8,10 @@ export default function Input({
   onChange,
   onBlur,
   value,
+  error,
 }) {
   return (
-    <div className={styles.container}>
+    <div className={error ? styles.container_error : styles.container}>
       <span className={styles.placeholder}>{placeholder}</span>
       <input
         className={styles.input}

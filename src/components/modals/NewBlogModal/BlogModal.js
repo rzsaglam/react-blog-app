@@ -1,8 +1,20 @@
 import React from "react";
 import Modal from "react-modal";
 import { Formik } from "formik";
+import * as Yup from "yup";
 import Button from "../../common/Button";
 import styles from "./styles.module.css";
+
+const BlogSchema = Yup.object().shape({
+  title: Yup.string()
+    .min(5, "Too Short!")
+    .max(100, "Too Long!")
+    .required("Required!"),
+  post: Yup.string()
+    .min(10, "Too Short!")
+    .max(3900, "Too Long!")
+    .required("Required!"),
+});
 
 function BlogModal({ isOpen, closeModal, handleFormSubmit }) {
   return (
@@ -14,12 +26,13 @@ function BlogModal({ isOpen, closeModal, handleFormSubmit }) {
       <div className={styles.body}>
         <Formik
           initialValues={{ title: "", post: "" }}
+          validationSchema={BlogSchema}
           onSubmit={(values) => handleFormSubmit(values)}
         >
-          {({ values, handleChange, handleBlur, handleSubmit }) => (
+          {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
             <form>
               <input
-                className={styles.title}
+                className={errors.title ? styles.title_error : styles.title}
                 type="text"
                 name="title"
                 value={values.title}
@@ -28,7 +41,7 @@ function BlogModal({ isOpen, closeModal, handleFormSubmit }) {
                 placeholder={"Title"}
               />
               <textarea
-                className={styles.post}
+                className={errors.post ? styles.post_error : styles.post}
                 type="text"
                 name="post"
                 value={values.post}

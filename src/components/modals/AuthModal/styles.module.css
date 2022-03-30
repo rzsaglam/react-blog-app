@@ -16,3 +16,12 @@
   left: 50%;
   transform: translate(-25%, -50%);
 }
+.button {
+  background-color: var(--dark);
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  color: var(--light);
+  font-size: 13px;
+  white-space: nowrap;
+}

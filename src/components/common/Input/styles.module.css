@@ -7,6 +7,13 @@
   border-bottom: 0.5px solid var(--dark);
   margin: 10px;
 }
+.container_error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid var(--red);
+  margin: 10px;
+}
 .input {
   border: 0;
   outline: none;

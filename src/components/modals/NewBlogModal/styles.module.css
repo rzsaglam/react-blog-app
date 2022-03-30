@@ -16,10 +16,23 @@
   outline: none;
   font-size: xx-large;
 }
+.title_error {
+  border: none;
+  border: 0.3px solid var(--red);
+  outline: none;
+  font-size: xx-large;
+}
 .post {
   margin: 1px;
   padding: 3px;
   border: none;
+  outline: none;
+  resize: none;
+}
+.post_error {
+  margin: 1px;
+  padding: 3px;
+  border: 0.3px solid var(--red);
   outline: none;
   resize: none;
 }
