@@ -15,9 +15,6 @@
 .innerContainer {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 10%;
 }
 
 .logo {
@@ -27,8 +24,10 @@
 }
 
 .link {
+  white-space: nowrap;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
   color: var(--dark);
+  margin-right: 10px;
 }

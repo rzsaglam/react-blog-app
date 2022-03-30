@@ -10,5 +10,25 @@
       "password": "123456",
       "id": 2
     }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "author": "testuke",
+      "title": "lorem ipsum",
+      "post": "lorem ipsum dolor sit amet"
+    },
+    {
+      "id": 2,
+      "author": "testuke",
+      "title": "lorem ipsum",
+      "post": "lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "test",
+      "post": "testuke bloguke",
+      "author": "testuke",
+      "id": 3
+    }
   ]
 }

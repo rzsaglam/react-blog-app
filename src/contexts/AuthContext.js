@@ -22,6 +22,7 @@ export function AuthContextProvider({ children }) {
     );
     if (user.length > 0) {
       await localStorage.setItem("@user", JSON.stringify(user[0]));
+      setUserSession(user[0]);
     } else {
       console.log("error");
     }
@@ -36,7 +37,6 @@ export function AuthContextProvider({ children }) {
     async function getUser() {
       const user = await localStorage.getItem("@user");
       setUserSession(JSON.parse(user));
-      console.log(userSession);
     }
     if (!userSession) {
       getUser();

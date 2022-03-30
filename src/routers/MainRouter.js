@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
 import Home from "../screens/Home";
-import Blogs from "../screens/Blog/Blogs";
+import BlogRouter from "./BlogRouter";
 
 function MainRouter() {
   const { userSession } = useContext(AuthContext);
@@ -11,9 +11,9 @@ function MainRouter() {
     <BrowserRouter>
       <Routes>
         {userSession ? (
-          <Route path={userSession ? "/" : "blogs"} element={<Blogs />} />
+          <Route path={userSession ? "*" : "blogs"} element={<BlogRouter />} />
         ) : (
-          <Route path={userSession ? "home" : "/"} element={<Home />} />
+          <Route path={userSession ? "home" : "*"} element={<Home />} />
         )}
       </Routes>
     </BrowserRouter>

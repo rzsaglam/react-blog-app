@@ -8,4 +8,5 @@
   padding-right: 10px;
   color: var(--light);
   font-size: 13px;
+  white-space: nowrap;
 }

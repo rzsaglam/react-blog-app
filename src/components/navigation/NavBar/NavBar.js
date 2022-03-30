@@ -14,9 +14,9 @@ function NavBar({ handleRegister, handleLogin }) {
         <p className={styles.logo}>Blog App</p>
       </div>
       <div className={styles.innerContainer}>
-        <span className={styles.link} onClick={() => setIsLoginModalOpen(true)}>
+        <p className={styles.link} onClick={() => setIsLoginModalOpen(true)}>
           Sign In
-        </span>
+        </p>
         <AuthModal
           isOpen={isLoginModalOpen}
           closeModal={() => setIsLoginModalOpen(false)}
