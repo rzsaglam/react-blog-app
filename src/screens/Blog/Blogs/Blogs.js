@@ -11,6 +11,7 @@ import "react-activity/dist/library.css";
 
 function Blogs() {
   const { userSession, handleLogout } = useContext(AuthContext);
+  const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
 
@@ -30,11 +31,21 @@ function Blogs() {
       author: userSession.username,
     };
     addBlog(blogData);
+    setIsBlogModalOpen(false);
+  }
+
+  function handleBlogModal() {
+    setIsBlogModalOpen((prevState) => !prevState);
   }
 
   return (
     <div className={styles.container}>
-      <SideBar handleLogOut={handleLogout} handleNewBlog={handleNewBlog} />
+      <SideBar
+        handleLogOut={handleLogout}
+        handleNewBlog={handleNewBlog}
+        handleModal={handleBlogModal}
+        isBlogModalOpen={isBlogModalOpen}
+      />
       <div className={styles.main}>
         {loading ? (
           <Bounce

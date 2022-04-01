@@ -9,6 +9,16 @@
       "username": "testuke",
       "password": "123456",
       "id": 2
+    },
+    {
+      "username": "testuke2",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "username": "testuke4",
+      "password": "123456",
+      "id": 4
     }
   ],
   "blogs": [
@@ -49,8 +59,8 @@
       "id": 6
     },
     {
-      "title": "loreim ipsuim",
-      "post": "lazuim lorerim ipsuim",
+      "title": "lorem isum dolor sit",
+      "post": "lorem isum dolor sit amet",
       "author": "testuke",
       "id": 7
     }

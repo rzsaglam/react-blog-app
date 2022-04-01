@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   MdOutlineAccountCircle,
   MdOutlineHome,
@@ -9,21 +9,21 @@ import styles from "./styles.module.css";
 
 import NewBlogModal from "../../modals/NewBlogModal";
 
-function SideBar({ handleNewBlog, handleLogOut }) {
-  const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
+function SideBar({
+  handleNewBlog,
+  handleLogOut,
+  handleModal,
+  isBlogModalOpen,
+}) {
   return (
     <div className={styles.container}>
       <Link to={"/"}>
         <MdOutlineHome size={30} color={"#484848"} />
       </Link>
-      <MdOutlineEdit
-        size={30}
-        color={"#484848"}
-        onClick={() => setIsBlogModalOpen(true)}
-      />
+      <MdOutlineEdit size={30} color={"#484848"} onClick={handleModal} />
       <NewBlogModal
         isOpen={isBlogModalOpen}
-        closeModal={() => setIsBlogModalOpen(false)}
+        closeModal={handleModal}
         handleFormSubmit={(form) => handleNewBlog(form)}
       />
       <MdOutlineAccountCircle

@@ -10,6 +10,7 @@ export function AuthContextProvider({ children }) {
     const users = await getUsers();
     if (users.data.find((user) => user.username !== formValues.username)) {
       registerUser(formValues);
+      handleLogin(formValues);
     } else {
       console.log("error");
     }

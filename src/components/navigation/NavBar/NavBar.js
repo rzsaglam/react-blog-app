@@ -1,34 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 
 import Button from "../../common/Button";
 
 import AuthModal from "../../modals/AuthModal";
 
-function NavBar({ handleRegister, handleLogin }) {
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+function NavBar({
+  handleRegister,
+  handleLogin,
+  handleLoginModal,
+  handleRegisterModal,
+  isLoginModalOpen,
+  isRegisterModalOpen,
+}) {
   return (
     <div className={styles.container}>
       <div>
         <p className={styles.logo}>Blog App</p>
       </div>
       <div className={styles.innerContainer}>
-        <p className={styles.link} onClick={() => setIsLoginModalOpen(true)}>
+        <p className={styles.link} onClick={handleLoginModal}>
           Sign In
         </p>
         <AuthModal
           isOpen={isLoginModalOpen}
-          closeModal={() => setIsLoginModalOpen(false)}
+          closeModal={handleLoginModal}
           title={"Log In."}
           handleFormSubmit={(values) => handleLogin(values)}
         />
-        <Button onClick={() => setIsRegisterModalOpen(true)}>
+        <Button onClick={handleRegisterModal}>
           <p>Sign Up</p>
         </Button>
         <AuthModal
           isOpen={isRegisterModalOpen}
-          closeModal={() => setIsRegisterModalOpen(false)}
+          closeModal={handleRegisterModal}
           title={"Join Us."}
           handleFormSubmit={(values) => handleRegister(values)}
         />
