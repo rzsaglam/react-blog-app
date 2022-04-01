@@ -27,7 +27,9 @@ function BlogModal({ isOpen, closeModal, handleFormSubmit }) {
         <Formik
           initialValues={{ title: "", post: "" }}
           validationSchema={BlogSchema}
-          onSubmit={(values) => handleFormSubmit(values)}
+          onSubmit={(values) => {
+            handleFormSubmit(values);
+          }}
         >
           {({ values, handleChange, handleBlur, handleSubmit, errors }) => (
             <form>
@@ -51,7 +53,7 @@ function BlogModal({ isOpen, closeModal, handleFormSubmit }) {
                 cols={130}
                 rows={30}
               />
-              <Button style={styles.share} onClick={() => handleSubmit()}>
+              <Button style={styles.share} onClick={handleSubmit}>
                 Share
               </Button>
             </form>

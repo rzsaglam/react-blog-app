@@ -8,7 +8,7 @@ function BlogRouter() {
   return (
     <Routes>
       <Route path="*" element={<Blogs />} />
-      <Route path="/BlogDetail" element={<BlogDetail />} />
+      <Route path="/BlogDetail/:id" element={<BlogDetail />} />
       <Route path="/BlogEdit" element={<BlogEdit />} />
     </Routes>
   );
