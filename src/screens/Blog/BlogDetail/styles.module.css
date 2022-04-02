@@ -4,4 +4,22 @@
 }
 .main {
   height: 100vh;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+}
+.title {
+  font-size: 50px;
+  padding-right: 100px;
+  border-bottom: 0.3px solid black;
+}
+.post {
+  font-size: 20px;
+}
+.author {
+  font-size: 15px;
+  font-style: italic;
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
 }
