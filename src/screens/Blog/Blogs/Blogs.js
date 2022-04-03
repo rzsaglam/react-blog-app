@@ -29,6 +29,7 @@ function Blogs() {
       title: form.title,
       post: form.post,
       author: userSession.username,
+      authorId: userSession.id,
     };
     addBlog(blogData);
     setIsBlogModalOpen(false);

@@ -63,6 +63,13 @@
       "post": "lorem isum dolor sit amet",
       "author": "testuke",
       "id": 7
+    },
+    {
+      "title": "testuk",
+      "post": "testuke blog author id",
+      "author": "testuke4",
+      "authorId": 4,
+      "id": 8
     }
   ]
 }

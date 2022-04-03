@@ -61,7 +61,7 @@ function AuthModal({ isOpen, closeModal, title, handleFormSubmit }) {
               placeholder={"Password"}
               error={errors.password}
             />
-            <Button style={styles.button} onClick={() => handleSubmit()}>
+            <Button style={styles.button} onClick={handleSubmit}>
               Submit
             </Button>
           </form>

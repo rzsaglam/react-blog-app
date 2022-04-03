@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  border: 0.3px solid black;
+  bottom: 25%;
+  background-color: white;
+  padding: 20px;
+  margin-left: 5px;
+}
+
+.link{
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  color: black;
+  text-align: left;
+  font-size: 15px;
+  padding: 0;
+  margin: 10px;
+}
