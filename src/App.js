@@ -1,12 +1,15 @@
 import "./App.css";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import { FavouriteContextProvider } from "./contexts/FavouriteContexts";
 
 import MainRouter from "./routers/MainRouter";
 
 const App = () => {
   return (
     <AuthContextProvider>
-      <MainRouter />
+      <FavouriteContextProvider>
+        <MainRouter />
+      </FavouriteContextProvider>
     </AuthContextProvider>
   );
 };

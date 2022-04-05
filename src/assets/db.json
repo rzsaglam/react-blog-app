@@ -26,50 +26,58 @@
       "id": 1,
       "author": "testuke",
       "title": "lorem ipsum",
-      "post": "lorem ipsum dolor sit amet"
+      "post": "lorem ipsum dolor sit amet",
+      "authorId": 2,
+      "favourites": [
+        4
+      ]
     },
     {
       "id": 2,
-      "author": "testuke",
+      "authorId": 2,
       "title": "lorem ipsum",
-      "post": "lorem ipsum dolor sit amet"
+      "post": "lorem ipsum dolor sit amet",
+      "author": "testuke",
+      "favourites": [
+        4
+      ]
     },
     {
+      "id": 3,
+      "authorId": 2,
       "title": "test",
       "post": "testuke bloguke",
       "author": "testuke",
-      "id": 3
+      "favourites": []
     },
     {
+      "id": 4,
+      "authorId": 2,
       "title": "What is Lorem Ipsum?",
       "post": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "author": "testuke",
-      "id": 4
+      "favourites": [
+        4,
+        2
+      ]
     },
     {
-      "title": "title",
-      "post": "ok\n,,, \nwell\nnihao\nhola\n",
-      "author": "testuke",
-      "id": 5
-    },
-    {
-      "title": "title",
-      "post": "ok\n,,, \nwell\nnihao\nhola\n",
-      "author": "testuke",
-      "id": 6
-    },
-    {
+      "id": 7,
+      "authorId": 2,
       "title": "lorem isum dolor sit",
       "post": "lorem isum dolor sit amet",
       "author": "testuke",
-      "id": 7
+      "favourites": []
     },
     {
-      "title": "testuk",
-      "post": "testuke blog author id",
-      "author": "testuke4",
-      "authorId": 4,
-      "id": 8
+      "id": 9,
+      "authorId": 2,
+      "title": "test for the fav and my blogs",
+      "post": "test entry for tests",
+      "author": "testuke",
+      "favourites": [
+        4
+      ]
     }
   ]
 }

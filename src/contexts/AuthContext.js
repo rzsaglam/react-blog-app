@@ -6,6 +6,16 @@ export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const [userSession, setUserSession] = useState();
 
+  useEffect(() => {
+    async function getUser() {
+      const user = await localStorage.getItem("@user");
+      setUserSession(JSON.parse(user));
+    }
+    if (!userSession) {
+      getUser();
+    }
+  }, [userSession]);
+
   async function handleRegister(formValues) {
     const users = await getUsers();
     if (users.data.find((user) => user.username !== formValues.username)) {
@@ -34,15 +44,6 @@ export function AuthContextProvider({ children }) {
     setUserSession();
   }
 
-  useEffect(() => {
-    async function getUser() {
-      const user = await localStorage.getItem("@user");
-      setUserSession(JSON.parse(user));
-    }
-    if (!userSession) {
-      getUser();
-    }
-  }, [userSession]);
   return (
     <AuthContext.Provider
       value={{ userSession, handleRegister, handleLogin, handleLogout }}

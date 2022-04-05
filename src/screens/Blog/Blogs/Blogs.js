@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../../../contexts/AuthContext";
+import FavouriteContext from "../../../contexts/FavouriteContexts";
 import { getBlogs, addBlog } from "../../../library/network/requests/blogs";
 import { Bounce } from "react-activity";
 
@@ -11,18 +12,23 @@ import "react-activity/dist/library.css";
 
 function Blogs() {
   const { userSession, handleLogout } = useContext(AuthContext);
+  const { favouritedBlogs, handleFavourite, loading } =
+    useContext(FavouriteContext);
   const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
+  const [userFavourites, setUserFavourites] = useState([]);
 
   useEffect(() => {
-    async function fetch() {
+    async function fetchBlogs() {
       let response = await getBlogs();
       setBlogs(response.data);
-      setLoading(false);
     }
-    fetch();
+    fetchBlogs();
   }, []);
+
+  useEffect(() => {
+    setUserFavourites(favouritedBlogs);
+  }, [userFavourites, favouritedBlogs]);
 
   function handleNewBlog(form) {
     const blogData = {
@@ -62,8 +68,17 @@ function Blogs() {
           blogs
             .slice()
             .reverse()
-            .map((blog, i) => {
-              return <BlogContainer key={i} blogData={blog} />;
+            .map((blog) => {
+              return (
+                <BlogContainer
+                  key={blog.id}
+                  blogData={blog}
+                  handleFavourite={handleFavourite}
+                  isFavourited={favouritedBlogs.some(
+                    (favBlog) => favBlog.id === blog.id
+                  )}
+                />
+              );
             })
         )}
       </div>
